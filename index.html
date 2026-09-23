@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Professional</title>
+    <title>MyPortfolio</title>
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,9 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* =====================================================
-           BASE STYLE + VARIABLE
-        =====================================================*/
         :root {
             --accent-color: #00d9ff;
             --text-color: #ffffff;
@@ -35,10 +32,7 @@
             color: var(--text-color);
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        a { text-decoration: none; color: inherit; }
 
         /* =====================================================
            NAVBAR
@@ -57,14 +51,15 @@
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
             color: var(--accent-color);
         }
 
         .navbar nav {
             display: flex;
-            gap: 25px;
+            gap: 22px;
+            align-items: center;
         }
 
         .navbar nav a {
@@ -73,9 +68,21 @@
             transition: 0.3s;
         }
 
-        .navbar nav a:hover {
-            color: var(--accent-color);
+        .navbar nav a:hover { color: var(--accent-color); }
+
+        .login-btn {
+            padding: 8px 20px;
+            background: var(--accent-color);
+            color: #000 !important;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
         }
+
+        .login-btn:hover { background: #fff; }
 
         .menu-toggle {
             display: none;
@@ -84,14 +91,8 @@
             color: var(--accent-color);
         }
 
-        /* --------------------
-           MOBILE NAV
-        --------------------*/
         @media (max-width: 850px) {
-            .navbar {
-                padding: 15px 6%;
-            }
-
+            .navbar { padding: 15px 6%; }
             .navbar nav {
                 position: absolute;
                 right: 0;
@@ -103,14 +104,8 @@
                 padding: 20px 0;
                 display: none;
             }
-
-            .navbar nav.show {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
+            .navbar nav.show { display: flex; }
+            .menu-toggle { display: block; }
         }
 
         /* =====================================================
@@ -126,29 +121,15 @@
             gap: 60px;
         }
 
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero-content h1 {
-            font-size: 55px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .hero-content h2 {
-            font-size: 24px;
-            font-weight: 300;
-            color: var(--accent-color);
-        }
-
+        .hero-content { flex: 1; }
+        .hero-content h1 { font-size: 40px; font-weight: 700; margin-bottom: 10px; }
+        .hero-content h2 { font-size: 15px; font-weight: 300; color: var(--accent-color); }
         .hero-description {
             margin: 18px 0;
             color: var(--text-muted);
             max-width: 470px;
             font-size: 15px;
         }
-
         #animated-text {
             font-size: 26px;
             font-weight: 600;
@@ -156,11 +137,7 @@
             margin-top: 8px;
         }
 
-        .cta-buttons {
-            margin-top: 25px;
-            display: flex;
-            gap: 16px;
-        }
+        .cta-buttons { margin-top: 25px; display: flex; gap: 16px; }
 
         .main-btn {
             padding: 12px 25px;
@@ -169,11 +146,10 @@
             border-radius: 10px;
             font-weight: 600;
             transition: 0.3s;
+            border: none;
+            cursor: pointer;
         }
-
-        .main-btn:hover {
-            background: #fff;
-        }
+        .main-btn:hover { background: #fff; }
 
         .outline-btn {
             padding: 12px 25px;
@@ -181,77 +157,40 @@
             color: var(--accent-color);
             border-radius: 10px;
             transition: 0.3s;
+            background: transparent;
+            cursor: pointer;
         }
+        .outline-btn:hover { background: var(--accent-color); color: #000; }
 
-        .outline-btn:hover {
-            background: var(--accent-color);
-            color: #000;
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
+        .hero-image { flex: 1; display: flex; justify-content: center; }
         .image-placeholder {
-            width: 330px;
-            height: 330px;
+            width: 300px; height: 300px;
             border-radius: 50%;
             overflow: hidden;
             border: 4px solid var(--accent-color);
         }
+        .image-placeholder img { width: 100%; height: 100%; object-fit: cover; }
 
-        .image-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* RESPONSIVE HERO */
         @media (max-width: 900px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-
-            .cta-buttons {
-                justify-content: center;
-            }
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .cta-buttons { justify-content: center; }
         }
 
         /* =====================================================
-           ABOUT SECTION
+           SECTION GENERIC
         =====================================================*/
-        .about {
-            padding: 100px 10%;
-            background: var(--bg-light);
-        }
+        .about { padding: 100px 10%; background: var(--bg-light); }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 40px; color: var(--accent-color); }
+        .section-title p { color: var(--text-muted); margin-top: 8px; }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 40px;
-            color: var(--accent-color);
-        }
-
-        /* =====================================================
-           SERVICES
-        =====================================================*/
-        .services {
-            padding: 100px 10%;
-            background: #070707;
-        }
-
+        /* SERVICES */
+        .services { padding: 100px 10%; background: #070707; }
         .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
-
         .service-card {
             padding: 30px;
             border-radius: 20px;
@@ -261,73 +200,98 @@
             text-align: center;
             transition: 0.3s;
         }
+        .service-card:hover { transform: translateY(-8px); border-color: var(--accent-color); }
+        .service-card i { font-size: 40px; margin-bottom: 15px; color: var(--accent-color); }
 
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-color);
-        }
-
-        .service-card i {
-            font-size: 40px;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-        }
-
-        /* =====================================================
-           PORTFOLIO
-        =====================================================*/
-        .portfolio {
-            padding: 100px 10%;
-        }
-
+        /* PORTFOLIO */
+        .portfolio { padding: 100px 10%; }
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
         }
+        .portfolio-item { position: relative; border-radius: 18px; overflow: hidden; }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+        .portfolio-item:hover img { transform: scale(1.1); opacity: 0.4; }
+        .portfolio-info { position: absolute; bottom: 20px; left: 20px; }
 
-        .portfolio-item {
-            position: relative;
+        /* =====================================================
+           BLOG SECTION
+        =====================================================*/
+        .blog {
+            padding: 100px 10%;
+            background: var(--bg-light);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .blog-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 18px;
             overflow: hidden;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
-        .portfolio-item img {
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-color);
+        }
+
+        .blog-card-img {
             width: 100%;
-            height: 100%;
+            height: 180px;
             object-fit: cover;
-            transition: 0.4s;
+            background: #222;
         }
 
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-            opacity: 0.4;
+        .blog-card-body {
+            padding: 22px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        .portfolio-info {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
+        .blog-card-body h3 {
+            color: var(--accent-color);
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .blog-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .blog-card-body p {
+            color: #cfcfcf;
+            font-size: 14px;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .blog-empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+            border: 1px dashed rgba(255,255,255,0.15);
+            border-radius: 16px;
         }
 
         /* =====================================================
            CONTACT
         =====================================================*/
-        .contact {
-            padding: 100px 10%;
-            background: #070707;
-        }
-
-        .contact-container {
-            display: flex;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .contact-form {
-            flex: 1;
-        }
-
+        .contact { padding: 100px 10%; background: #070707; }
+        .contact-container { display: flex; gap: 50px; flex-wrap: wrap; }
+        .contact-form { flex: 1; min-width: 280px; }
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -338,15 +302,35 @@
             outline: none;
             background: #111;
             color: #fff;
+            font-family: inherit;
+            font-size: 14px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: 0.2s;
         }
-
-        .contact-info {
-            flex: 1;
-            color: var(--text-muted);
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent-color);
         }
+        .contact-info { flex: 1; min-width: 260px; color: var(--text-muted); }
+        .contact-info p { margin-bottom: 12px; }
+        .contact-info i { color: var(--accent-color); margin-right: 8px; }
 
-        .contact-info p {
-            margin-bottom: 12px;
+        /* RESPONSIVE CONTACT (MOBILE) */
+        @media (max-width: 768px) {
+            .contact { padding: 80px 6%; }
+            .contact-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .contact-form,
+            .contact-info {
+                width: 100%;
+                flex: none;
+                min-width: 0;
+            }
+            .contact-form button.main-btn {
+                width: 100%;
+            }
         }
 
         /* =====================================================
@@ -359,6 +343,239 @@
             background: #050505;
             font-size: 14px;
         }
+
+        /* =====================================================
+           MODAL (LOGIN + ADMIN)
+        =====================================================*/
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(6px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            padding: 20px;
+        }
+
+        .modal-overlay.show { display: flex; }
+
+        .modal-box {
+            background: #111;
+            border: 1px solid rgba(0,217,255,0.3);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 480px;
+            padding: 30px;
+            position: relative;
+            animation: pop 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-box.large { max-width: 780px; }
+
+        @keyframes pop {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .modal-close:hover { color: var(--accent-color); }
+
+        .modal-box h2 {
+            color: var(--accent-color);
+            margin-bottom: 6px;
+            font-size: 24px;
+        }
+
+        .modal-box .subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        /* ==== ICON GEMBOK DI TENGAH POPUP LOGIN ==== */
+        .login-lock-wrap {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        .login-lock-icon {
+            width: 78px;
+            height: 78px;
+            border-radius: 50%;
+            background: rgba(0, 217, 255, 0.10);
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 32px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 12px rgba(0,217,255,0.25); }
+            to   { box-shadow: 0 0 28px rgba(0,217,255,0.55); }
+        }
+        /* Judul & subtitle login rata tengah */
+        #loginModal .modal-box h2,
+        #loginModal .modal-box .subtitle {
+            text-align: center;
+        }
+        #loginModal .modal-box h2 {
+            display: block;
+            justify-content: center;
+        }
+        #loginModal .modal-box h2 i { display: none; } /* sembunyikan ikon kecil di samping judul */
+        /* =========================================== */
+
+        .form-group { margin-bottom: 16px; }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 14px;
+            background: #0a0a0a;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: #fff;
+            outline: none;
+            font-size: 14px;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent-color);
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .btn-row .main-btn,
+        .btn-row .outline-btn { flex: 1; min-width: 120px; text-align: center; }
+
+        .alert {
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 14px;
+            display: none;
+        }
+        .alert.show { display: block; }
+        .alert.error { background: rgba(255,0,0,0.15); color: #ff8888; border: 1px solid rgba(255,0,0,0.3); }
+        .alert.success { background: rgba(0,255,100,0.12); color: #7bffb0; border: 1px solid rgba(0,255,100,0.3); }
+
+        /* ADMIN PANEL */
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .admin-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .admin-tab {
+            padding: 10px 16px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 14px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+
+        .admin-tab.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        .admin-tab-content { display: none; }
+        .admin-tab-content.active { display: block; }
+
+        .post-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 14px;
+            background: #0a0a0a;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .post-list-item h4 {
+            font-size: 15px;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .post-list-item small {
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .icon-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 13px;
+        }
+        .icon-btn:hover { background: var(--accent-color); color: #000; }
+        .icon-btn.danger:hover { background: #ff4444; color: #fff; }
+
+        .admin-user-info {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .admin-user-info strong { color: var(--accent-color); }
     </style>
 </head>
 
@@ -368,14 +585,16 @@
         NAVBAR
     ===================================================== -->
     <header class="navbar">
-        <div class="logo">Fatur Rachman</div>
+        <div class="logo">PORTFOLIO</div>
 
-        <nav>
+        <nav id="navMenu">
             <a href="#home">Home</a>
             <a href="#about">Tentang</a>
             <a href="#services">Layanan</a>
             <a href="#portfolio">Portfolio</a>
+            <a href="#blog">Blog</a>
             <a href="#contact">Kontak</a>
+            <button id="loginBtn" class="login-btn">Login</button>
         </nav>
 
         <div class="menu-toggle"><i class="fa fa-bars"></i></div>
@@ -385,17 +604,13 @@
         HERO SECTION
     ===================================================== -->
     <section id="home" class="hero">
-
         <div class="hero-content">
-            <h1>Halo, Saya Developer</h1>
-            <h2>Web • UI/UX • Branding</h2>
-
+            <h1>Halo, Saya Fatkhurrokhman</h1>
+            <h2>Web Developer • Vibe Code • Writer</h2>
             <div id="animated-text"></div>
-
             <p class="hero-description">
                 Saya membantu membuat website & aplikasi modern dengan tampilan profesional dan performa tinggi.
             </p>
-
             <div class="cta-buttons">
                 <a href="#contact" class="main-btn">Hubungi Saya</a>
                 <a href="#portfolio" class="outline-btn">Lihat Portfolio</a>
@@ -407,12 +622,9 @@
                 <img src="profil.png" alt="profile">
             </div>
         </div>
-
     </section>
 
-    <!-- =====================================================
-        ABOUT
-    ===================================================== -->
+    <!-- ABOUT -->
     <section id="about" class="about">
         <div class="section-title">
             <h2>Tentang Saya</h2>
@@ -420,9 +632,7 @@
         </div>
     </section>
 
-    <!-- =====================================================
-        SERVICES
-    ===================================================== -->
+    <!-- SERVICES -->
     <section id="services" class="services">
         <div class="section-title">
             <h2>Services</h2>
@@ -435,13 +645,11 @@
                 <h3>Web Development</h3>
                 <p>Membuat website modern, cepat, aman & responsif.</p>
             </div>
-
             <div class="service-card">
                 <i class="fa fa-paint-brush"></i>
                 <h3>UI/UX Design</h3>
                 <p>Desain antarmuka elegan & mudah digunakan.</p>
             </div>
-
             <div class="service-card">
                 <i class="fa fa-mobile"></i>
                 <h3>App Interface</h3>
@@ -450,9 +658,7 @@
         </div>
     </section>
 
-    <!-- =====================================================
-        PORTFOLIO
-    ===================================================== -->
+    <!-- PORTFOLIO -->
     <section id="portfolio" class="portfolio">
         <div class="section-title">
             <h2>Portfolio</h2>
@@ -461,23 +667,21 @@
 
         <div class="portfolio-grid">
             <div class="portfolio-item">
-                <img src="assets/work1.jpg">
+                <img src="assets/work1.jpg" alt="work1">
                 <div class="portfolio-info">
                     <h3>Project Satu</h3>
                     <p>Website Modern</p>
                 </div>
             </div>
-
             <div class="portfolio-item">
-                <img src="assets/work2.jpg">
+                <img src="assets/work2.jpg" alt="work2">
                 <div class="portfolio-info">
                     <h3>Mobile App</h3>
                     <p>UI/UX Premium</p>
                 </div>
             </div>
-
             <div class="portfolio-item">
-                <img src="assets/work3.jpg">
+                <img src="assets/work3.jpg" alt="work3">
                 <div class="portfolio-info">
                     <h3>Dashboard</h3>
                     <p>Admin Interface</p>
@@ -487,7 +691,25 @@
     </section>
 
     <!-- =====================================================
-        CONTACT
+        BLOG SECTION
+    ===================================================== -->
+    <section id="blog" class="blog">
+        <div class="section-title">
+            <h2>Blog</h2>
+            <p>Artikel, tutorial & pengalaman terbaru</p>
+        </div>
+
+        <div id="blogGrid" class="blog-grid">
+            <div class="blog-empty">
+                <i class="fa fa-spinner fa-spin" style="font-size:28px;"></i>
+                <p style="margin-top:10px;">Memuat artikel...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+        CONTACT — TERKONEKSI KE EMAIL
+        (FormSubmit: kirim ke fatkhurrokhman.id@gmail.com)
     ===================================================== -->
     <section id="contact" class="contact">
         <div class="section-title">
@@ -496,60 +718,534 @@
         </div>
 
         <div class="contact-container">
-            <form class="contact-form">
-                <input type="text" placeholder="Nama Kamu">
-                <input type="email" placeholder="Email">
-                <textarea rows="5" placeholder="Pesan Kamu"></textarea>
+            <form
+                class="contact-form"
+                action="https://formsubmit.co/fatkhurrokhman.id@gmail.com"
+                method="POST"
+            >
+                <!-- Konfigurasi FormSubmit -->
+                <input type="hidden" name="_subject" value="Pesan Baru dari Website Portfolio">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="#contact">
+
+                <input type="text" name="nama" placeholder="Nama Kamu" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="pesan" rows="5" placeholder="Pesan Kamu" required></textarea>
                 <button class="main-btn" type="submit">Kirim Pesan</button>
             </form>
 
             <div class="contact-info">
-                <p><i class="fa fa-envelope"></i> email@domain.com</p>
-                <p><i class="fa fa-phone"></i> +62 812-3456-7890</p>
-                <p><i class="fa fa-map-marker"></i> Indonesia</p>
+                <p><i class="fa fa-envelope"></i> fatkhurrokhman.id@gmail.com</p>
+                <p><i class="fa fa-phone"></i> +62 81 794 024 20</p>
+                <p><i class="fa fa-map-marker"></i> Indramayu - Jawa Barat - Indonesia</p>
             </div>
         </div>
     </section>
 
-    <!-- =====================================================
-        FOOTER
-    ===================================================== -->
+    <!-- FOOTER -->
     <footer class="footer">
-        © 2026 Your Name — All Rights Reserved
+        © 2026 Fatur Rachman — All Rights Reserved
     </footer>
 
     <!-- =====================================================
-        JS SECTION
+        MODAL LOGIN  (dengan ikon gembok di tengah)
     ===================================================== -->
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="modal-close" data-close="loginModal"><i class="fa fa-xmark"></i></button>
 
-    <!-- ScrollReveal -->
+            <!-- ICON GEMBOK DI TENGAH -->
+            <div class="login-lock-wrap">
+                <div class="login-lock-icon">
+                    <i class="fa fa-lock"></i>
+                </div>
+            </div>
+
+            <h2>Login</h2>
+            <p class="subtitle">Admin Panel</p>
+
+            <div id="loginAlert" class="alert"></div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="loginUsername" placeholder="Masukkan username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" placeholder="Masukkan password" required>
+                </div>
+                <button type="submit" class="main-btn" style="width:100%;">Masuk</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- =====================================================
+        MODAL ADMIN PANEL (KELOLA BLOG)
+    ===================================================== -->
+    <div id="adminModal" class="modal-overlay">
+        <div class="modal-box large">
+            <button class="modal-close" data-close="adminModal"><i class="fa fa-xmark"></i></button>
+
+            <div class="admin-header">
+                <div>
+                    <h2><i class="fa fa-gauge"></i> Dashboard Admin</h2>
+                    <span class="admin-user-info">Login sebagai <strong id="adminUser">admin</strong></span>
+                </div>
+                <button class="outline-btn" id="logoutBtn" style="padding:8px 16px;font-size:13px;">
+                    <i class="fa fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="tab-list"><i class="fa fa-list"></i> Daftar Blog</button>
+                <button class="admin-tab" data-tab="tab-create"><i class="fa fa-plus"></i> Tambah Blog</button>
+            </div>
+
+            <div id="tab-list" class="admin-tab-content active">
+                <div id="adminPostList">
+                    <p style="color:var(--text-muted);text-align:center;">Memuat data...</p>
+                </div>
+            </div>
+
+            <div id="tab-create" class="admin-tab-content">
+                <div id="postAlert" class="alert"></div>
+
+                <form id="postForm">
+                    <input type="hidden" id="postId">
+
+                    <div class="form-group">
+                        <label>Judul Artikel</label>
+                        <input type="text" id="postTitle" placeholder="Judul blog" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>URL Gambar (opsional)</label>
+                        <input type="url" id="postImage" placeholder="https://...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Isi Artikel</label>
+                        <textarea id="postContent" rows="6" placeholder="Tulis konten blog di sini..." required></textarea>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="submit" class="main-btn" id="submitBtn">
+                            <i class="fa fa-paper-plane"></i> Simpan Blog
+                        </button>
+                        <button type="button" class="outline-btn" id="resetFormBtn">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================
+        SCRIPTS
+    ===================================================== -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <script>
-        // BURGER MENU
-        document.querySelector(".menu-toggle").onclick = () => {
-            document.querySelector(".navbar nav").classList.toggle("show");
+        /* =========================================================
+           ⚙️ KONFIGURASI API GOOGLE APPS SCRIPT
+        ========================================================= */
+        const API_URL = "https://script.google.com/macros/s/AKfycbzkuftph17wi1Bk73M07_zXBdMotmLycbDWFruHCq9DKVq3g0LmR27IYYr5eED8qEAa7w/exec";
+
+        // =========================================
+        // MENU TOGGLE (MOBILE) — AUTO CLOSE SAAT LINK DIKLIK
+        // =========================================
+        const navMenu = document.querySelector(".navbar nav");
+        const menuToggle = document.querySelector(".menu-toggle");
+
+        menuToggle.onclick = () => {
+            navMenu.classList.toggle("show");
         };
 
-        // TYPING ANIMATION
-        const words = ["Frontend Developer", "UI/UX Designer", "Brand Specialist"];
-        let i = 0;
+        // Tutup menu otomatis saat salah satu link nav diklik
+        document.querySelectorAll(".navbar nav a").forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("show");
+            });
+        });
 
+        // (Opsional) Tutup menu saat klik di luar area nav
+        document.addEventListener("click", (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove("show");
+            }
+        });
+
+        // =========================================
+        // TYPING ANIMATION
+        // =========================================
+        const words = ["Kadang Nulis", "Kadang Ngedesen Grafis", "Penikmat GoodDay Frezze"];
+        let i = 0;
         function type() {
-            document.getElementById("animated-text").innerHTML = words[i];
+            const el = document.getElementById("animated-text");
+            if (el) el.textContent = words[i];
             i = (i + 1) % words.length;
         }
-
         setInterval(type, 2000);
         type();
 
-        // ScrollReveal animations
+        // =========================================
+        // SCROLLREVEAL
+        // =========================================
         ScrollReveal().reveal('.section-title', { distance: '40px', duration: 800, origin: 'top' });
-        ScrollReveal().reveal('.service-card, .portfolio-item, .contact-form', {
-            distance: '40px',
-            duration: 600,
-            origin: 'bottom',
-            interval: 120
+        ScrollReveal().reveal('.service-card, .portfolio-item, .contact-form, .blog-card', {
+            distance: '40px', duration: 600, origin: 'bottom', interval: 120
+        });
+
+        // =========================================
+        // MODAL HELPER
+        // =========================================
+        function openModal(id) {
+            document.getElementById(id).classList.add("show");
+            document.body.style.overflow = "hidden";
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.remove("show");
+            document.body.style.overflow = "";
+        }
+        document.querySelectorAll("[data-close]").forEach(btn => {
+            btn.onclick = () => closeModal(btn.dataset.close);
+        });
+        document.querySelectorAll(".modal-overlay").forEach(ov => {
+            ov.addEventListener("click", e => {
+                if (e.target === ov) closeModal(ov.id);
+            });
+        });
+
+        // =========================================
+        // SESSION (localStorage)
+        // =========================================
+        const SESSION_KEY = "blog_admin_session";
+
+        function getSession() {
+            try { return JSON.parse(localStorage.getItem(SESSION_KEY)); }
+            catch { return null; }
+        }
+        function setSession(data) {
+            localStorage.setItem(SESSION_KEY, JSON.stringify(data));
+        }
+        function clearSession() {
+            localStorage.removeItem(SESSION_KEY);
+        }
+
+        // =========================================
+        // LOGIN HANDLER
+        // =========================================
+        const loginBtn = document.getElementById("loginBtn");
+        const loginForm = document.getElementById("loginForm");
+        const loginAlert = document.getElementById("loginAlert");
+
+        loginBtn.onclick = () => {
+            const session = getSession();
+            if (session) {
+                openAdminPanel(session);
+            } else {
+                openModal("loginModal");
+            }
+        };
+
+        function showAlert(el, msg, type = "error") {
+            el.textContent = msg;
+            el.className = "alert show " + type;
+            setTimeout(() => { el.className = "alert " + type; }, 4000);
+        }
+
+        loginForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const username = document.getElementById("loginUsername").value.trim();
+            const password = document.getElementById("loginPassword").value.trim();
+
+            const btn = loginForm.querySelector("button[type=submit]");
+            const originalText = btn.textContent;
+            btn.textContent = "Memproses...";
+            btn.disabled = true;
+
+            try {
+                const res = await fetch(API_URL, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        action: "login",
+                        username,
+                        password
+                    })
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    const session = {
+                        username: data.username || username,
+                        role: data.role || "admin",
+                        loginAt: new Date().toISOString()
+                    };
+                    setSession(session);
+                    showAlert(loginAlert, "Login berhasil! Mengalihkan...", "success");
+
+                    setTimeout(() => {
+                        closeModal("loginModal");
+                        loginForm.reset();
+                        loginAlert.className = "alert";
+                        openAdminPanel(session);
+                    }, 700);
+                } else {
+                    showAlert(loginAlert, data.message || "Username / Password salah!");
+                }
+            } catch (err) {
+                console.error(err);
+                showAlert(loginAlert, "Tidak bisa terhubung ke server. Periksa API_URL.");
+            } finally {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }
+        });
+
+        // =========================================
+        // ADMIN PANEL
+        // =========================================
+        function openAdminPanel(session) {
+            document.getElementById("adminUser").textContent = session.username;
+            openModal("adminModal");
+            loadBlogPostsAdmin();
+        }
+
+        document.getElementById("logoutBtn").onclick = () => {
+            if (confirm("Yakin ingin logout?")) {
+                clearSession();
+                closeModal("adminModal");
+                alert("Logout berhasil.");
+            }
+        };
+
+        // TABS
+        document.querySelectorAll(".admin-tab").forEach(tab => {
+            tab.onclick = () => {
+                document.querySelectorAll(".admin-tab").forEach(t => t.classList.remove("active"));
+                document.querySelectorAll(".admin-tab-content").forEach(c => c.classList.remove("active"));
+                tab.classList.add("active");
+                document.getElementById(tab.dataset.tab).classList.add("active");
+            };
+        });
+
+        // =========================================
+        // LOAD BLOG KE WEBSITE (PUBLIK)
+        // =========================================
+        async function loadBlogPosts() {
+            const grid = document.getElementById("blogGrid");
+            try {
+                const res = await fetch(API_URL + "?action=getPosts");
+                const data = await res.json();
+
+                if (!data.posts || data.posts.length === 0) {
+                    grid.innerHTML = `
+                        <div class="blog-empty">
+                            <i class="fa fa-folder-open" style="font-size:32px;color:var(--accent-color);"></i>
+                            <p style="margin-top:12px;">Belum ada artikel blog.</p>
+                        </div>`;
+                    return;
+                }
+
+                grid.innerHTML = data.posts.map(p => `
+                    <div class="blog-card">
+                        ${p.image ? `<img class="blog-card-img" src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" onerror="this.style.display='none'">` : ""}
+                        <div class="blog-card-body">
+                            <h3>${escapeHtml(p.title)}</h3>
+                            <div class="blog-meta">
+                                <i class="fa fa-user"></i> ${escapeHtml(p.author || "Admin")} 
+                                &nbsp;•&nbsp; 
+                                <i class="fa fa-calendar"></i> ${formatDate(p.date)}
+                            </div>
+                            <p>${truncate(escapeHtml(p.content), 180)}</p>
+                        </div>
+                    </div>
+                `).join("");
+            } catch (err) {
+                console.error(err);
+                grid.innerHTML = `
+                    <div class="blog-empty">
+                        <i class="fa fa-exclamation-triangle" style="font-size:32px;color:#ff8888;"></i>
+                        <p style="margin-top:12px;">Gagal memuat blog. Periksa koneksi API.</p>
+                    </div>`;
+            }
+        }
+
+        // =========================================
+        // LOAD BLOG DI ADMIN PANEL
+        // =========================================
+        async function loadBlogPostsAdmin() {
+            const list = document.getElementById("adminPostList");
+            list.innerHTML = `<p style="color:var(--text-muted);text-align:center;">Memuat data...</p>`;
+
+            try {
+                const res = await fetch(API_URL + "?action=getPosts");
+                const data = await res.json();
+
+                if (!data.posts || data.posts.length === 0) {
+                    list.innerHTML = `<p style="color:var(--text-muted);text-align:center;">Belum ada postingan.</p>`;
+                    return;
+                }
+
+                list.innerHTML = data.posts.map(p => `
+                    <div class="post-list-item">
+                        <div style="flex:1;min-width:200px;">
+                            <h4>${escapeHtml(p.title)}</h4>
+                            <small>${escapeHtml(p.author || "Admin")} • ${formatDate(p.date)}</small>
+                        </div>
+                        <div class="post-actions">
+                            <button class="icon-btn" onclick='editPost(${JSON.stringify(p).replace(/'/g, "&apos;")})'>
+                                <i class="fa fa-pen"></i>
+                            </button>
+                            <button class="icon-btn danger" onclick="deletePost('${p.id}')">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join("");
+            } catch (err) {
+                console.error(err);
+                list.innerHTML = `<p style="color:#ff8888;text-align:center;">Gagal memuat data.</p>`;
+            }
+        }
+
+        // =========================================
+        // FORM SUBMIT (TAMBAH / EDIT)
+        // =========================================
+        const postForm = document.getElementById("postForm");
+        const postAlert = document.getElementById("postAlert");
+
+        postForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const session = getSession();
+            if (!session) { alert("Sesi habis. Silakan login ulang."); return; }
+
+            const id = document.getElementById("postId").value;
+            const title = document.getElementById("postTitle").value.trim();
+            const image = document.getElementById("postImage").value.trim();
+            const content = document.getElementById("postContent").value.trim();
+
+            const payload = {
+                action: id ? "updatePost" : "createPost",
+                id: id || "",
+                title,
+                image,
+                content,
+                author: session.username,
+                token: session.username
+            };
+
+            const btn = document.getElementById("submitBtn");
+            const original = btn.innerHTML;
+            btn.innerHTML = "Menyimpan...";
+            btn.disabled = true;
+
+            try {
+                const res = await fetch(API_URL, {
+                    method: "POST",
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    showAlert(postAlert, id ? "Blog berhasil diupdate!" : "Blog berhasil ditambahkan!", "success");
+                    postForm.reset();
+                    document.getElementById("postId").value = "";
+                    btn.innerHTML = `<i class="fa fa-paper-plane"></i> Simpan Blog`;
+                    loadBlogPostsAdmin();
+                    loadBlogPosts();
+                } else {
+                    showAlert(postAlert, data.message || "Gagal menyimpan.");
+                    btn.innerHTML = original;
+                }
+            } catch (err) {
+                console.error(err);
+                showAlert(postAlert, "Kesalahan koneksi server.");
+                btn.innerHTML = original;
+            } finally {
+                btn.disabled = false;
+            }
+        });
+
+        document.getElementById("resetFormBtn").onclick = () => {
+            postForm.reset();
+            document.getElementById("postId").value = "";
+            document.getElementById("submitBtn").innerHTML = `<i class="fa fa-paper-plane"></i> Simpan Blog`;
+        };
+
+        // =========================================
+        // EDIT / DELETE
+        // =========================================
+        function editPost(post) {
+            document.getElementById("postId").value = post.id;
+            document.getElementById("postTitle").value = post.title;
+            document.getElementById("postImage").value = post.image || "";
+            document.getElementById("postContent").value = post.content;
+
+            document.querySelectorAll(".admin-tab").forEach(t => t.classList.remove("active"));
+            document.querySelectorAll(".admin-tab-content").forEach(c => c.classList.remove("active"));
+            document.querySelector('[data-tab="tab-create"]').classList.add("active");
+            document.getElementById("tab-create").classList.add("active");
+            document.getElementById("submitBtn").innerHTML = `<i class="fa fa-save"></i> Update Blog`;
+        }
+
+        async function deletePost(id) {
+            if (!confirm("Yakin ingin menghapus postingan ini?")) return;
+            const session = getSession();
+            if (!session) return;
+
+            try {
+                const res = await fetch(API_URL, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        action: "deletePost",
+                        id,
+                        token: session.username
+                    })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    loadBlogPostsAdmin();
+                    loadBlogPosts();
+                } else {
+                    alert(data.message || "Gagal menghapus.");
+                }
+            } catch (err) {
+                alert("Kesalahan koneksi server.");
+            }
+        }
+
+        // =========================================
+        // HELPERS
+        // =========================================
+        function escapeHtml(str) {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        function truncate(str, n) {
+            return str.length > n ? str.slice(0, n) + "..." : str;
+        }
+
+        function formatDate(d) {
+            if (!d) return "-";
+            try {
+                const date = new Date(d);
+                return date.toLocaleDateString("id-ID", { day: "2-digit", month: "short", year: "numeric" });
+            } catch { return d; }
+        }
+
+        // =========================================
+        // INIT
+        // =========================================
+        document.addEventListener("DOMContentLoaded", () => {
+            loadBlogPosts();
         });
     </script>
 
